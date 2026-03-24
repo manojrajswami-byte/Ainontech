@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Career Roadmap 2026 — Bengaluru</title>
+<style>
+:root {
+  --bg:#0F172A; --surface:#1E293B; --border:#334155;
+  --text:#F1F5F9; --muted:#64748B; --subtle:#94A3B8;
+  --blue:#1A56DB; --green:#059669; --amber:#D97706;
+  --pink:#DB2777; --purple:#7C3AED;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh}
+a{color:inherit;text-decoration:none}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:999px}
+
+/* Layout */
+.app{display:flex;min-height:100vh}
+
+/* Sidebar */
+.sidebar{width:210px;flex-shrink:0;background:#0B1120;border-right:1px solid var(--border);position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column}
+.sb-logo{padding:18px 14px 12px;border-bottom:1px solid var(--border)}
+.sb-logo-title{font-size:12px;font-weight:700;color:#60A5FA;letter-spacing:.5px}
+.sb-logo-sub{font-size:10px;color:var(--muted);margin-top:2px}
+.sb-nav{padding:10px 6px;flex:1}
+.sb-sec{font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;padding:8px 8px 4px}
+.sb-item{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:7px;cursor:pointer;font-size:12px;color:var(--subtle);transition:all .15s;margin-bottom:1px;border:none;background:none;width:100%;text-align:left}
+.sb-item:hover{background:var(--surface);color:var(--text)}
+.sb-item .si{font-size:13px;flex-shrink:0}
+.sb-pct{margin-left:auto;font-size:10px;font-weight:700;padding:1px 5px;border-radius:999px;background:var(--border)}
+.sb-foot{padding:10px 14px;border-top:1px solid var(--border)}
+.sb-saved{font-size:10px;color:var(--muted);margin-bottom:5px}
+.reset-btn{width:100%;padding:6px;background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:6px;cursor:pointer;font-size:11px;transition:all .15s}
+.reset-btn:hover{border-color:#EF4444;color:#EF4444}
+
+/* Main */
+.main{flex:1;overflow-y:auto}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,#1A56DB 0%,#0EA5E9 100%);padding:28px 28px 24px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50px;right:-50px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.06)}
+.hero::after{content:'';position:absolute;bottom:-70px;left:35%;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.04)}
+.hero-in{position:relative}
+.hero-tag{font-size:10px;letter-spacing:3px;color:rgba(255,255,255,.7);text-transform:uppercase;margin-bottom:7px}
+.hero-title{font-size:26px;font-weight:800;color:#fff;line-height:1.2}
+.hero-sub{font-size:13px;color:rgba(255,255,255,.8);margin-top:5px}
+.hero-row{display:flex;align-items:center;gap:20px;margin-top:18px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:18px;flex-wrap:wrap}
+.h-stat .val{font-size:24px;font-weight:800;color:#fff;line-height:1}
+.h-stat .lbl{font-size:10px;color:rgba(255,255,255,.7);margin-top:2px}
+.hero-prog{flex:1;min-width:180px}
+.pbar-lbl{display:flex;justify-content:space-between;color:rgba(255,255,255,.85);font-size:12px;margin-bottom:5px}
+.pbar{background:rgba(255,255,255,.25);border-radius:999px;height:7px;overflow:hidden}
+.pbar-fill{height:100%;border-radius:999px;background:#fff;transition:width .6s ease}
+
+/* Badge banner */
+.badge-banner{background:linear-gradient(90deg,#6D28D9,#7C3AED);padding:8px 28px;display:none;align-items:center;justify-content:center;gap:8px}
+.badge-banner.show{display:flex}
+.badge-banner span{color:#fff;font-size:13px}
+
+/* Tabs */
+.tab-nav{display:flex;gap:3px;padding:14px 28px 0;background:var(--surface);border-bottom:1px solid var(--border);flex-wrap:wrap}
+.tab-btn{padding:8px 14px;font-size:13px;font-weight:600;border:none;background:transparent;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s}
+.tab-btn.active{color:var(--text);border-bottom-color:var(--blue)}
+.tab-btn:hover{color:var(--text)}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+
+/* Content */
+.content{padding:24px 28px 60px}
+
+/* QS Banner */
+.qs-banner{background:linear-gradient(135deg,rgba(76,29,149,.3),rgba(124,58,237,.15));border:1px solid rgba(124,58,237,.4);border-radius:11px;padding:13px 16px;margin-bottom:16px;display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.qs-banner h3{font-size:13px;font-weight:700;color:#C4B5FD}
+.qs-banner p{font-size:11px;color:var(--muted);margin-top:2px}
+.qs-open-btn{background:var(--purple);color:#fff;border:none;padding:7px 14px;border-radius:7px;font-size:12px;cursor:pointer;font-weight:600;white-space:nowrap}
+.qs-open-btn:hover{background:#6D28D9}
+
+/* Pills */
+.pills{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.pill{flex:1 1 90px;min-width:85px;background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:9px 11px;cursor:pointer;transition:all .2s}
+.pill:hover{border-color:var(--subtle)}
+.pill-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.pill-icon{font-size:14px}
+.pill-cnt{font-size:11px;font-weight:700}
+.pill-lbl{font-size:9px;color:var(--muted);margin-bottom:4px}
+.pill-bar{background:rgba(255,255,255,.1);border-radius:999px;height:3px;overflow:hidden}
+.pill-bar-f{height:100%;border-radius:999px;transition:width .5s}
+
+/* Phase card */
+.ph-card{background:var(--surface);border:1px solid var(--border);border-radius:13px;overflow:hidden;margin-bottom:12px;transition:box-shadow .2s}
+.ph-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.ph-card.qs{border-color:#4C1D95;box-shadow:0 0 18px rgba(124,58,237,.12)}
+.ph-hdr{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;transition:background .15s;border-bottom:1px solid transparent}
+.ph-hdr:hover{background:rgba(255,255,255,.025)}
+.ph-hdr.open{border-bottom-color:var(--border)}
+.ph-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ph-meta{flex:1}
+.ph-title-row{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.ph-title{font-size:15px;font-weight:700}
+.ph-tag{font-size:9px;letter-spacing:1px;padding:2px 6px;border-radius:999px;font-weight:700}
+.ph-weeks{font-size:11px;color:var(--muted);margin-top:2px}
+.ph-ring{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.chev{color:var(--muted);font-size:15px;transition:transform .2s}
+.chev.open{transform:rotate(180deg)}
+.ph-goal{padding:9px 18px;font-size:12px;color:var(--subtle);font-style:italic;border-bottom:1px solid var(--border);display:none}
+.tasks-wrap{display:none}
+
+/* Task */
+.task{display:flex;align-items:flex-start;gap:11px;padding:11px 18px;transition:opacity .2s;border-bottom:1px solid rgba(255,255,255,.04)}
+.task:last-child{border-bottom:none}
+.task.done{opacity:.5}
+.t-check{width:21px;height:21px;border-radius:5px;flex-shrink:0;margin-top:1px;cursor:pointer;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .2s;background:transparent;user-select:none}
+.t-check.chk{border-color:transparent}
+.t-check.chk::after{content:'✓';color:#fff;font-size:11px;font-weight:700}
+.t-body{flex:1;min-width:0}
+.t-title-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.t-title{font-size:13px;font-weight:600}
+.task.done .t-title{text-decoration:line-through;color:var(--muted)}
+.bdg-pill{font-size:9px;padding:2px 5px;border-radius:999px;border:1px solid var(--purple);color:#A78BFA;background:rgba(124,58,237,.1)}
+.t-desc{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.5}
+.t-tip{margin-top:8px;padding:7px 11px;border-radius:7px;font-size:11px;color:#CBD5E1;line-height:1.5;display:none}
+.t-tip.show{display:block}
+.t-res{margin-top:7px;display:none;flex-wrap:wrap;gap:4px}
+.t-res.show{display:flex}
+.t-acts{display:flex;gap:4px;flex-shrink:0;margin-top:1px}
+.act-btn{padding:3px 8px;border-radius:5px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-size:10px;transition:all .15s}
+.act-btn:hover{border-color:var(--subtle);color:var(--text)}
+.res-link{font-size:11px;padding:3px 8px;border-radius:5px;border:1px solid var(--border);color:var(--subtle);transition:all .15s;display:inline-flex;align-items:center;gap:3px}
+.res-link:hover{border-color:#60A5FA;color:#60A5FA}
+
+/* Ring SVG */
+.ring{transform:rotate(-90deg)}
+.ring-bg{fill:none;stroke:#334155;stroke-width:5}
+.ring-fill{fill:none;stroke-width:5;stroke-linecap:round;transition:stroke-dasharray .6s ease}
+
+/* Section */
+.sec-hdr{margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--border)}
+.sec-hdr h2{font-size:19px;font-weight:700}
+.sec-hdr p{font-size:12px;color:var(--muted);margin-top:3px}
+
+/* Companies */
+.co-table{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden}
+.co-table th{background:var(--blue);color:#fff;padding:9px 11px;font-size:12px;text-align:left;font-weight:600}
+.co-table td{padding:9px 11px;font-size:12px;border-bottom:1px solid var(--border)}
+.co-table tr:last-child td{border-bottom:none}
+.co-table tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.co-name{font-weight:700}
+.co-roles{color:var(--subtle)}
+.co-salary{font-weight:700}
+.co-links{display:flex;gap:5px;flex-wrap:wrap}
+.co-link{font-size:10px;padding:3px 7px;border-radius:5px;border:1px solid var(--border);color:var(--subtle);transition:all .15s;white-space:nowrap}
+.co-link:hover{border-color:#60A5FA;color:#60A5FA}
+
+/* Salary grid */
+.sal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:11px;margin-top:14px}
+.sal-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;border-top:3px solid}
+.sal-card .tl{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:7px}
+.sal-card .sv{font-size:19px;font-weight:800;margin-bottom:3px}
+.sal-card .sr{font-size:12px;color:var(--subtle);line-height:1.4;margin-bottom:5px}
+.sal-card .ss{font-size:11px;color:var(--muted);font-style:italic}
+
+/* Tier header */
+.tier-hdr{font-size:15px;font-weight:700;margin:22px 0 10px;display:flex;align-items:center;gap:8px}
+.tier-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+
+/* Roadmap tab */
+.rm-phase{margin-bottom:26px}
+.rm-ph-hdr{display:flex;align-items:center;gap:10px;margin-bottom:11px}
+.rm-ph-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.rm-task{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:13px 15px;margin-bottom:7px;border-left:3px solid}
+.rm-task-top{display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap}
+.rm-task-title{font-size:13px;font-weight:600;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.dur-pill{font-size:10px;color:var(--muted);background:var(--bg);padding:1px 6px;border-radius:999px;border:1px solid var(--border)}
+.rm-task-desc{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.5}
+.rm-task-tip{font-size:11px;color:var(--subtle);margin-top:5px;font-style:italic;line-height:1.5}
+.rm-res{margin-top:9px;display:flex;flex-wrap:wrap;gap:5px}
+
+/* Quote */
+.quote{background:linear-gradient(135deg,rgba(26,86,219,.15),rgba(14,165,233,.1));border:1px solid rgba(26,86,219,.3);border-radius:10px;padding:18px 22px;text-align:center;margin-top:28px}
+.quote p{color:#93C5FD;font-size:14px;font-style:italic;line-height:1.7}
+
+/* Toast */
+.toast{position:fixed;bottom:22px;right:22px;background:#1E3A5F;border:1px solid #3B82F6;color:#93C5FD;padding:9px 15px;border-radius:8px;font-size:13px;transform:translateY(70px);opacity:0;transition:all .3s;z-index:9999;pointer-events:none}
+.toast.show{transform:translateY(0);opacity:1}
+
+@media(max-width:700px){
+  .sidebar{display:none}
+  .content{padding:16px 14px 48px}
+  .hero{padding:20px 14px 18px}
+  .hero-title{font-size:20px}
+  .co-table{font-size:11px}
+  .co-table th,.co-table td{padding:7px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- Sidebar -->
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-logo-title">AI Roadmap 2026</div>
+    <div class="sb-logo-sub">B.Com → Google AI Pro · Bengaluru</div>
+  </div>
+  <nav class="sb-nav">
+    <div class="sb-sec">Navigation</div>
+    <button class="sb-item" onclick="switchTab('tracker')"><span class="si">✅</span> Progress Tracker</button>
+    <button class="sb-item" onclick="switchTab('roadmap')"><span class="si">🗺️</span> Full Roadmap</button>
+    <button class="sb-item" onclick="switchTab('companies')"><span class="si">🏢</span> Companies</button>
+    <div class="sb-sec" style="margin-top:10px">Phases</div>
+    <button class="sb-item" onclick="jumpToPhase(0)"><span class="si">⚡</span><span>Quick Start</span><span class="sb-pct" id="npct0" style="color:#7C3AED">0%</span></button>
+    <button class="sb-item" onclick="jumpToPhase(1)"><span class="si">🧠</span><span>Phase 1</span><span class="sb-pct" id="npct1" style="color:#1A56DB">0%</span></button>
+    <button class="sb-item" onclick="jumpToPhase(2)"><span class="si">📊</span><span>Phase 2</span><span class="sb-pct" id="npct2" style="color:#059669">0%</span></button>
+    <button class="sb-item" onclick="jumpToPhase(3)"><span class="si">🤖</span><span>Phase 3</span><span class="sb-pct" id="npct3" style="color:#D97706">0%</span></button>
+    <button class="sb-item" onclick="jumpToPhase(4)"><span class="si">🚀</span><span>Phase 4</span><span class="sb-pct" id="npct4" style="color:#DB2777">0%</span></button>
+    <div class="sb-sec" style="margin-top:10px">Quick Links</div>
+    <a class="sb-item" href="https://aistudio.google.com" target="_blank"><span class="si">🔬</span> AI Studio</a>
+    <a class="sb-item" href="https://cloud.google.com/free" target="_blank"><span class="si">☁️</span> Cloud Free Tier</a>
+    <a class="sb-item" href="https://www.kaggle.com/learn" target="_blank"><span class="si">📚</span> Kaggle Learn</a>
+    <a class="sb-item" href="https://careers.google.com" target="_blank"><span class="si">💼</span> Google Careers</a>
+  </nav>
+  <div class="sb-foot">
+    <div class="sb-saved" id="last-saved">Progress saved in browser</div>
+    <button class="reset-btn" onclick="confirmReset()">🔄 Reset All Progress</button>
+  </div>
+</aside>
+
+<!-- Main -->
+<div class="main">
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-in">
+    <div class="hero-tag">AI Career Roadmap · Bengaluru 2026</div>
+    <div class="hero-title">B.Com → Google AI Professional</div>
+    <div class="hero-sub">24-week transformation plan · All resources linked · Progress saved in browser</div>
+    <div class="hero-row">
+      <div class="hero-stats">
+        <div class="h-stat"><div class="val" id="h-done">0</div><div class="lbl">Tasks Done</div></div>
+        <div class="h-stat"><div class="val" id="h-total">24</div><div class="lbl">Total Tasks</div></div>
+        <div class="h-stat"><div class="val" id="h-bdg">0</div><div class="lbl">Google Badges</div></div>
+      </div>
+      <div class="hero-prog">
+        <div class="pbar-lbl"><span>Overall Progress</span><span id="h-pct">0%</span></div>
+        <div class="pbar"><div class="pbar-fill" id="h-pbar" style="width:0%"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Badge banner -->
+<div class="badge-banner" id="bdg-banner">
+  <span id="bdg-banner-text">🏅 Badges earned — add them to LinkedIn now!</span>
+</div>
+
+<!-- Tab nav -->
+<div class="tab-nav">
+  <button class="tab-btn active" id="tb-tracker" onclick="switchTab('tracker')">✅ Progress Tracker</button>
+  <button class="tab-btn" id="tb-roadmap" onclick="switchTab('roadmap')">🗺️ Full Roadmap</button>
+  <button class="tab-btn" id="tb-companies" onclick="switchTab('companies')">🏢 Companies & Salaries</button>
+</div>
+
+<!-- ═══ TRACKER TAB ═══ -->
+<div class="tab-pane active content" id="tp-tracker">
+  <div class="qs-banner" id="qs-banner">
+    <span style="font-size:22px">⚡</span>
+    <div style="flex:1"><h3>Start here — 70 minutes, 3 free Google badges</h3><p>Complete courses 1, 2 & 3 this weekend before Week 1. All links verified & live.</p></div>
+    <button class="qs-open-btn" onclick="jumpToPhase(0)">Open Quick Start ⚡</button>
+  </div>
+
+  <!-- Pills -->
+  <div class="pills" id="pills"></div>
+  <!-- Phase cards -->
+  <div id="phase-cards"></div>
+
+  <div class="quote"><p>"Your B.Com degree is not a disadvantage. It is your moat.<br>No one else in the room can explain a P&L <em>and</em> build an AI agent."</p></div>
+</div>
+
+<!-- ═══ ROADMAP TAB ═══ -->
+<div class="tab-pane content" id="tp-roadmap">
+  <div class="sec-hdr"><h2>Complete 24-Week Roadmap</h2><p>All phases, all resources, all links — your full plan from B.Com to Google AI Professional.</p></div>
+  <div id="rm-content"></div>
+  <div class="quote"><p>"Your B.Com degree is not a disadvantage. It is your moat.<br>No one else in the room can explain a P&L <em>and</em> build an AI agent."</p></div>
+</div>
+
+<!-- ═══ COMPANIES TAB ═══ -->
+<div class="tab-pane content" id="tp-companies">
+  <div class="sec-hdr"><h2>Companies to Apply After Week 24</h2><p>Actively hiring in Bengaluru for roles that match your exact skill profile.</p></div>
+
+  <div style="font-size:15px;font-weight:700;margin-bottom:12px">📈 Realistic Salary Progression</div>
+  <div class="sal-grid">
+    <div class="sal-card" style="border-top-color:#059669"><div class="tl" style="color:#059669">After Week 24</div><div class="sv" style="color:#059669">₹6 – 10 LPA</div><div class="sr">Prompt Engineer · AI Business Analyst · AI Content Strategist</div><div class="ss">Prompt Engineering + 3 Portfolio Projects</div></div>
+    <div class="sal-card" style="border-top-color:#1A56DB"><div class="tl" style="color:#1A56DB">12 – 18 months</div><div class="sv" style="color:#1A56DB">₹12 – 18 LPA</div><div class="sr">Customer Success Manager (AI) · AI Product Analyst</div><div class="ss">SQL + BigQuery + Vertex AI Agent</div></div>
+    <div class="sal-card" style="border-top-color:#D97706"><div class="tl" style="color:#D97706">3 – 5 years</div><div class="sv" style="color:#D97706">₹20 – 35 LPA</div><div class="sr">Solutions Consultant · AI Product Manager</div><div class="ss">Full stack: Data + Agents + RAG</div></div>
+    <div class="sal-card" style="border-top-color:#DB2777"><div class="tl" style="color:#DB2777">5 – 7 years</div><div class="sv" style="color:#DB2777">₹35 – 50 LPA+</div><div class="sr">Senior AI Consultant · Google Cloud Specialist</div><div class="ss">Domain expertise + leadership</div></div>
+  </div>
+
+  <div class="tier-hdr" style="margin-top:28px"><span class="tier-dot" style="background:#059669"></span> Tier 1 — Apply Immediately After Week 24</div>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:10px">Highest volume, lowest degree barriers. Start here.</p>
+  <table class="co-table">
+    <thead><tr><th>Company</th><th>Roles to Search</th><th>Salary</th><th>Apply</th></tr></thead>
+    <tbody>
+      <tr><td><span class="co-name">Accenture</span></td><td><span class="co-roles">Prompt Engineer · AI Business Analyst</span></td><td><span class="co-salary" style="color:#059669">₹4.8–6 LPA</span></td><td><div class="co-links"><a href="https://www.accenture.com/in-en/careers" target="_blank" class="co-link">Portal ↗</a><a href="https://www.accenture.com/in-en/careers/jobsearch?jk=prompt+engineer&jl=bengaluru" target="_blank" class="co-link">Search ↗</a></div></td></tr>
+      <tr><td><span class="co-name">TCS</span></td><td><span class="co-roles">AI Analyst · GenAI Consultant · Prompt Engineer</span></td><td><span class="co-salary" style="color:#059669">₹3.6–7 LPA</span></td><td><div class="co-links"><a href="https://www.tcs.com/careers" target="_blank" class="co-link">Portal ↗</a><a href="https://ibegin.tcs.com/iBegin/" target="_blank" class="co-link">Search ↗</a></div></td></tr>
+      <tr><td><span class="co-name">Infosys</span></td><td><span class="co-roles">Business Analyst (AI) · LLM Analyst</span></td><td><span class="co-salary" style="color:#059669">₹3.6–6 LPA</span></td><td><div class="co-links"><a href="https://www.infosys.com/careers/" target="_blank" class="co-link">Portal ↗</a><a href="https://career.infosys.com/joblist" target="_blank" class="co-link">Search ↗</a></div></td></tr>
+      <tr><td><span class="co-name">Wipro</span></td><td><span class="co-roles">Data Analyst · AI Analyst · GenAI Business Analyst</span></td><td><span class="co-salary" style="color:#059669">₹4–7 LPA</span></td><td><div class="co-links"><a href="https://careers.wipro.com/" target="_blank" class="co-link">Portal ↗</a><a href="https://careers.wipro.com/careers-home/" target="_blank" class="co-link">Search ↗</a></div></td></tr>
+      <tr><td><span class="co-name">Turing</span></td><td><span class="co-roles">AI Quality Analyst · Gemini Evaluator</span></td><td><span class="co-salary" style="color:#059669">₹6–10 LPA</span></td><td><div class="co-links"><a href="https://www.turing.com/jobs" target="_blank" class="co-link">Portal ↗</a></div></td></tr>
+    </tbody>
+  </table>
+
+  <div class="tier-hdr" style="margin-top:24px"><span class="tier-dot" style="background:#1A56DB"></span> Tier 2 — Apply After 12–18 Months of Experience</div>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:10px">Work at Tier 1 first, then move up to these higher-paying roles.</p>
+  <table class="co-table">
+    <thead><tr><th>Company</th><th>Roles to Search</th><th>Salary</th><th>Apply</th></tr></thead>
+    <tbody>
+      <tr><td><span class="co-name">Deloitte</span></td><td><span class="co-roles">Analytics Analyst · AI Consultant · BI Developer</span></td><td><span class="co-salary" style="color:#1A56DB">₹8–14 LPA</span></td><td><div class="co-links"><a href="https://www2.deloitte.com/in/en/careers.html" target="_blank" class="co-link">Portal ↗</a></div></td></tr>
+      <tr><td><span class="co-name">EY (GDS India)</span></td><td><span class="co-roles">Business Analyst · AI Consultant · Data Analyst</span></td><td><span class="co-salary" style="color:#1A56DB">₹8–15 LPA</span></td><td><div class="co-links"><a href="https://www.ey.com/en_in/careers" target="_blank" class="co-link">Portal ↗</a></div></td></tr>
+      <tr><td><span class="co-name">Freshworks</span></td><td><span class="co-roles">AI Product Analyst · Customer Success Manager</span></td><td><span class="co-salary" style="color:#1A56DB">₹10–18 LPA</span></td><td><div class="co-links"><a href="https://www.freshworks.com/company/careers/" target="_blank" class="co-link">Portal ↗</a></div></td></tr>
+      <tr><td><span class="co-name">Zoho</span></td><td><span class="co-roles">AI Product Analyst · Customer Success (AI)</span></td><td><span class="co-salary" style="color:#1A56DB">₹8–16 LPA</span></td><td><div class="co-links"><a href="https://careers.zohocorp.com/" target="_blank" class="co-link">Portal ↗</a></div></td></tr>
+      <tr><td><span class="co-name">Google (gTech)</span></td><td><span class="co-roles">Customer Success Manager (AI) · Solutions Consultant</span></td><td><span class="co-salary" style="color:#1A56DB">₹12–22 LPA</span></td><td><div class="co-links"><a href="https://careers.google.com/jobs/results/?q=customer+success+manager&location=Bengaluru" target="_blank" class="co-link">Search ↗</a></div></td></tr>
+    </tbody>
+  </table>
+
+  <div class="tier-hdr" style="margin-top:22px">🔍 Job Board Quick Links</div>
+  <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:28px">
+    <a href="https://www.linkedin.com/jobs/search/?keywords=AI+Business+Analyst&location=Bengaluru" target="_blank" class="res-link" style="padding:7px 13px;font-size:12px">LinkedIn — AI Business Analyst ↗</a>
+    <a href="https://www.naukri.com/genai-analyst-jobs-in-bangalore" target="_blank" class="res-link" style="padding:7px 13px;font-size:12px">Naukri — GenAI Analyst ↗</a>
+    <a href="https://www.glassdoor.co.in/Job/bengaluru-prompt-engineer-jobs-SRCH_IL.0,9_IC2940938_KO10,25.htm" target="_blank" class="res-link" style="padding:7px 13px;font-size:12px">Glassdoor — Prompt Engineer ↗</a>
+    <a href="https://careers.google.com/jobs/results/?location=India&q=AI+customer+success" target="_blank" class="res-link" style="padding:7px 13px;font-size:12px">Google Careers ↗</a>
+    <a href="https://wellfound.com/jobs?role=ai-ml-engineer&location=Bangalore%2C+India" target="_blank" class="res-link" style="padding:7px 13px;font-size:12px">Wellfound — AI Startups ↗</a>
+  </div>
+  <div class="quote"><p>"Your B.Com degree is not a disadvantage. It is your moat.<br>No one else in the room can explain a P&L <em>and</em> build an AI agent."</p></div>
+</div>
+
+</div><!-- /main -->
+</div><!-- /app -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════════
+// DATA
+// ══════════════════════════════════════════
+const PHASES = [
+  { id:0, label:"Quick Start", title:"5 Free Google Courses", weeks:"This Weekend", color:"#7C3AED", icon:"⚡", tag:"START HERE",
+    goal:"70 minutes total. 3 Google badges. Do these this weekend before Week 1 — recruiters see them instantly on LinkedIn.",
+    tasks:[
+      {id:"0a",title:"Intro to Generative AI",desc:"30 mins · Free Google badge · Foundational vocabulary every recruiter assumes you have.",tip:"Go to skills.google/course_templates/536 — sign in with Google, watch the video, pass the quiz, claim badge. 30 mins flat.",url:"https://www.skills.google/course_templates/536",badge:true,dur:"30 mins"},
+      {id:"0b",title:"Intro to Large Language Models",desc:"10 mins · Free Google badge · Understand what powers Gemini, ChatGPT & Claude.",tip:"The shortest course on the list — only 10 minutes! Go to skills.google/course_templates/539. Do it right after Course 1.",url:"https://www.skills.google/course_templates/539",badge:true,dur:"10 mins"},
+      {id:"0c",title:"Intro to Responsible AI",desc:"30 mins · Free Google badge · Directly feeds into Phase 3 Red Teaming module.",tip:"Go to skills.google/course_templates/554. Doing it now gives you context that makes Phase 3 much easier.",url:"https://www.skills.google/course_templates/554",badge:true,dur:"30 mins"},
+      {id:"0d",title:"GenAI Bootcamp by Google",desc:"Live event · Free · Register now, attend when sessions run.",tip:"Go to cloudonair.withgoogle.com/gen-ai-bootcamp and register. Sessions are live and interactive — great for networking too.",url:"https://cloudonair.withgoogle.com/gen-ai-bootcamp",badge:false,dur:"Live"},
+      {id:"0e",title:"Google AI Essentials",desc:"~15 hrs · Already in your Phase 1 plan — start it after courses 1–3.",tip:"This is your main Phase 1 certification. Go to skills.google/paths/2336. Courses 1–3 are the warm-up for this.",url:"https://www.skills.google/paths/2336",badge:true,dur:"~15 hrs",
+       resources:[{l:"Enrol on Coursera",u:"https://www.coursera.org/specializations/ai-essentials-google"},{l:"Free on Google Skills",u:"https://www.skills.google/paths/2336"}]},
+    ]
+  },
+  { id:1, label:"Phase 1", title:"AI-Fluent Business Foundation", weeks:"Weeks 1–6", color:"#1A56DB", icon:"🧠", tag:null,
+    goal:"Get the certifications Google recruiters look for to verify non-tech candidates.",
+    tasks:[
+      {id:"1a",title:"Google AI Essentials (Coursera)",desc:"15 hrs · Gen AI basics, ethics, productivity. Your quick win.",tip:"Free 7-day Coursera trial available. Complete Module 1 today — it's only 90 mins.",url:"https://www.coursera.org/specializations/ai-essentials-google",badge:false,dur:"15 hrs",
+       resources:[{l:"Enrol on Coursera",u:"https://www.coursera.org/specializations/ai-essentials-google"},{l:"Free on Google Skills",u:"https://www.skills.google/paths/2336"},{l:"Intro to Gen AI (quick badge)",u:"https://www.skills.google/course_templates/536"}]},
+      {id:"1b",title:"Google AI Professional Certificate",desc:"Vibe Coding + AI data analysis. The 2026 heavy hitter.",tip:"Focus on the Gemini API labs — these directly demonstrate hands-on skill to recruiters.",url:"https://www.coursera.org/professional-certificates/google-ai",badge:false,dur:"6 months"},
+      {id:"1c",title:"Advanced Prompt Engineering",desc:"Chain-of-Thought & Few-Shot prompting. Your primary technical skill.",tip:"Build a personal 'prompt library' as you learn. This becomes a portfolio artifact.",url:"https://www.coursera.org/specializations/prompting-essentials-google",badge:false,dur:"3 weeks",
+       resources:[{l:"Google Prompting Essentials",u:"https://www.coursera.org/specializations/prompting-essentials-google"},{l:"Practice in AI Studio (free)",u:"https://aistudio.google.com"}]},
+      {id:"1d",title:"Set Up Google Cloud Free Tier",desc:"$300 in free credits. Essential for Phase 2 & 3.",tip:"Takes 10 mins. Go to cloud.google.com/free. Do it now — you'll need it in Week 7.",url:"https://cloud.google.com/free",badge:false,dur:"10 mins"},
+      {id:"1e",title:"Start Weekly LinkedIn Posts",desc:"One AI insight per week. Recruiters actively search for this.",tip:"Post #1: 'I'm starting a 24-week AI upskilling journey.' Accountability + visibility, Day 1.",url:"https://www.linkedin.com",badge:false,dur:"Ongoing"},
+    ]
+  },
+  { id:2, label:"Phase 2", title:"The Modern Data Bridge", weeks:"Weeks 7–14", color:"#059669", icon:"📊", tag:null,
+    goal:"Learn the language of data. You can't manage AI if you can't talk to the data it uses.",
+    tasks:[
+      {id:"2a",title:"SQL & Google BigQuery",desc:"Pull, filter, and analyse data. BigQuery ML = AI with SQL commands.",tip:"Start with free 'Learn SQL' on Kaggle. Then move to BigQuery sandbox — free up to 1TB/month.",url:"https://www.kaggle.com/learn/intro-to-sql",badge:false,dur:"4 weeks",
+       resources:[{l:"Kaggle — Intro to SQL",u:"https://www.kaggle.com/learn/intro-to-sql"},{l:"Kaggle — Advanced SQL",u:"https://www.kaggle.com/learn/advanced-sql"},{l:"BigQuery Documentation",u:"https://cloud.google.com/bigquery/docs"}]},
+      {id:"2b",title:"BigQuery ML Project",desc:"Run your first AI model using only SQL commands.",tip:"Use a public FMCG sales dataset to build a demand prediction model. No Python needed.",url:"https://cloud.google.com/bigquery/docs/create-machine-learning-model",badge:false,dur:"2 weeks",
+       resources:[{l:"BigQuery ML Tutorial",u:"https://cloud.google.com/bigquery/docs/create-machine-learning-model"},{l:"BigQuery ML Intro",u:"https://cloud.google.com/bigquery/docs/bqml-introduction"}]},
+      {id:"2c",title:"BI: Google Looker or Tableau",desc:"Visualise data. Your B.Com strength is explaining WHY a number matters.",tip:"Tableau Public is free. Build a dashboard using India FMCG retail data from Kaggle.",url:"https://public.tableau.com",badge:false,dur:"2 weeks",
+       resources:[{l:"Tableau Public (free)",u:"https://public.tableau.com"},{l:"Google Looker Studio (free)",u:"https://lookerstudio.google.com"},{l:"Kaggle FMCG Datasets",u:"https://www.kaggle.com/datasets"}]},
+      {id:"2d",title:"Python Basics — Pandas & NumPy",desc:"Just enough to clean a messy spreadsheet. Not trying to be a developer.",tip:"Complete the 5-hour 'Python for Data Analysis' on Kaggle. That is all you need for now.",url:"https://www.kaggle.com/learn/python",badge:false,dur:"2 weeks",
+       resources:[{l:"Kaggle — Python Course",u:"https://www.kaggle.com/learn/python"},{l:"Kaggle — Pandas Course",u:"https://www.kaggle.com/learn/pandas"}]},
+    ]
+  },
+  { id:3, label:"Phase 3", title:"The Google Cloud Agent Stack", weeks:"Weeks 15–20", color:"#D97706", icon:"🤖", tag:null,
+    goal:"Master Google's specific 2026 AI tools. These are what recruiters will test you on.",
+    tasks:[
+      {id:"3a",title:"Vertex AI Agent Builder",desc:"Build agents that perform real tasks — not just chat.",tip:"Google has free codelabs for Agent Builder. Start with the 'Customer Service Agent' codelab.",url:"https://cloud.google.com/products/agent-builder",badge:false,dur:"2 weeks",
+       resources:[{l:"Vertex AI Agent Builder",u:"https://cloud.google.com/products/agent-builder"},{l:"Codelab — Build AI Agents",u:"https://codelabs.developers.google.com/devsite/codelabs/building-ai-agents-vertexai"},{l:"Vertex AI Docs",u:"https://cloud.google.com/vertex-ai"}]},
+      {id:"3b",title:"Grounding & RAG",desc:"Connect Gemini to a company's Knowledge Base so it doesn't hallucinate.",tip:"The single most-requested enterprise AI skill in 2026. Master it and you'll stand out in every interview.",url:"https://cloud.google.com/vertex-ai/generative-ai/docs/rag-overview",badge:false,dur:"2 weeks",
+       resources:[{l:"Vertex AI RAG Engine Overview",u:"https://cloud.google.com/vertex-ai/generative-ai/docs/rag-overview"},{l:"Codelab — RAG with Vertex AI",u:"https://codelabs.developers.google.com/vertexai-gws-agents"}]},
+      {id:"3c",title:"Responsible AI & Red Teaming",desc:"Systematically test your AI tools for bias and failure modes.",tip:"You did 'Intro to Responsible AI' in Quick Start — now go deeper with the full Skills Boost path.",url:"https://www.cloudskillsboost.google/paths/118",badge:false,dur:"1 week",
+       resources:[{l:"Intro to Responsible AI (free badge!)",u:"https://www.skills.google/course_templates/554"},{l:"Google Cloud Skills Boost Path",u:"https://www.cloudskillsboost.google/paths/118"},{l:"Google AI Principles",u:"https://ai.google/responsibility/principles"}]},
+      {id:"3d",title:"GenAI Bootcamp (live sessions)",desc:"Attend the live Google GenAI Bootcamp — registered in Quick Start.",tip:"Sessions cover Vertex AI and agent-building in depth. Post your learnings on LinkedIn — free visibility.",url:"https://cloudonair.withgoogle.com/gen-ai-bootcamp",badge:false,dur:"Ongoing"},
+      {id:"3e",title:"Begin Portfolio Project 1 (Week 16+)",desc:"FMCG Analyst Agent — start building during Phase 3, not after.",tip:"Overlap is intentional. Building while learning makes technical concepts stick 3x faster.",url:"https://www.kaggle.com/search?q=fmcg+india",badge:false,dur:"2 weeks",
+       resources:[{l:"Kaggle FMCG India Datasets",u:"https://www.kaggle.com/search?q=fmcg+india"},{l:"Vertex AI Agent Engine",u:"https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/overview"}]},
+    ]
+  },
+  { id:4, label:"Phase 4", title:"Portfolio & Networking", weeks:"Weeks 21–24", color:"#DB2777", icon:"🚀", tag:null,
+    goal:"Prove you can do the work. Three portfolio projects + the Bengaluru strategy.",
+    tasks:[
+      {id:"4a",title:"Project 1: FMCG Analyst Agent",desc:"Predicts which stores will run out of stock. Targets Google's retail/CPG clients.",tip:"Use publicly available FMCG datasets from Kaggle. Speaks directly to HUL, ITC, Nestlé — all Google Cloud clients.",url:"https://www.kaggle.com/datasets",badge:false,dur:"2 weeks",
+       resources:[{l:"Kaggle FMCG & Retail Datasets",u:"https://www.kaggle.com/datasets"},{l:"Vertex AI Agent Engine",u:"https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/overview"}]},
+      {id:"4b",title:"Project 2: Marketing Brain Agent",desc:"Personalised ad copy for different Indian regions. Multilingual AI.",tip:"Use Gemini's multilingual capabilities to generate copy in Hindi, Kannada, Tamil, and English.",url:"https://ai.google.dev",badge:false,dur:"1 week",
+       resources:[{l:"Gemini API",u:"https://ai.google.dev"},{l:"Google AI Studio (test free)",u:"https://aistudio.google.com"}]},
+      {id:"4c",title:"Project 3: B.Com Tutor Agent",desc:"Grounded in accounting principles. Demonstrates RAG + domain expertise.",tip:"Ground it in ICAI study materials. No engineer can replicate this. It is your moat.",url:"https://icai.org/post/study-material",badge:false,dur:"1 week",
+       resources:[{l:"ICAI Study Materials",u:"https://icai.org/post/study-material"},{l:"Vertex AI Vector Search",u:"https://cloud.google.com/vertex-ai/docs/vector-search/overview"}]},
+      {id:"4d",title:"PromptWars Hackathon — Bengaluru",desc:"Meet Google Cloud Customer Success + Solutions managers. They hire B.Com grads.",tip:"Prepare a 60-second pitch: your background, what you built, the role you're targeting. Practice 10 times.",url:"https://developers.google.com/events",badge:false,dur:"1 day"},
+      {id:"4e",title:"Mock Interviews & Applications",desc:"STAR method answers referencing your three projects. Apply to 10 targeted roles.",tip:"Target: Customer Success Manager (AI), Solutions Consultant, Business Analyst (AI/ML). Apply Accenture + TCS first.",url:"https://careers.google.com",badge:false,dur:"Ongoing",
+       resources:[{l:"Google Careers",u:"https://careers.google.com"},{l:"LinkedIn Jobs AI India",u:"https://www.linkedin.com/jobs/search/?keywords=AI+Customer+Success+India"}]},
+    ]
+  }
+];
+
+const CIRC = 2 * Math.PI * 17;
+const TOTAL = PHASES.reduce((s,p)=>s+p.tasks.length,0);
+const BADGE_IDS = PHASES.flatMap(p=>p.tasks.filter(t=>t.badge).map(t=>t.id));
+
+// ══════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════
+let checked = {};
+let openPhases = {0:true};
+
+function loadState(){
+  try{ const s=localStorage.getItem('ai_rm_2026'); if(s) checked=JSON.parse(s); }catch(e){}
+}
+function saveState(){
+  try{ localStorage.setItem('ai_rm_2026',JSON.stringify(checked)); }catch(e){}
+  const d=new Date();
+  document.getElementById('last-saved').textContent=`Saved: ${d.toLocaleTimeString()}`;
+}
+
+// ══════════════════════════════════════════
+// RENDER
+// ══════════════════════════════════════════
+function buildUI(){
+  buildPills();
+  buildPhaseCards();
+  buildRoadmap();
+}
+
+function buildPills(){
+  const el=document.getElementById('pills');
+  el.innerHTML=PHASES.map(p=>`
+    <div class="pill" id="pill${p.id}" onclick="jumpToPhase(${p.id})" style="border-color:${p.color}22">
+      <div class="pill-top"><span class="pill-icon">${p.icon}</span><span class="pill-cnt" id="pcnt${p.id}" style="color:${p.color}">0/${p.tasks.length}</span></div>
+      <div class="pill-lbl">${p.label} · ${p.weeks}</div>
+      <div class="pill-bar"><div class="pill-bar-f" id="pbar${p.id}" style="background:${p.color};width:0%"></div></div>
+    </div>`).join('');
+}
+
+function buildPhaseCards(){
+  const el=document.getElementById('phase-cards');
+  el.innerHTML=PHASES.map(p=>{
+    const tasks=p.tasks.map(t=>`
+      <div class="task" id="tr${t.id}">
+        <div class="t-check" id="ck${t.id}" style="border-color:${p.color}" onclick="toggleTask('${t.id}','${p.color}')"></div>
+        <div class="t-body">
+          <div class="t-title-row">
+            <span class="t-title" id="tt${t.id}">${t.title}</span>
+            ${t.badge?`<span class="bdg-pill">🏅 Badge</span>`:''}
+          </div>
+          <div class="t-desc">${t.desc}</div>
+          <div class="t-tip" id="tip${t.id}" style="background:${p.color}18;border:1px solid ${p.color}44">💡 ${t.tip}</div>
+          ${t.resources?`<div class="t-res" id="res${t.id}">${t.resources.map(r=>`<a class="res-link" href="${r.u}" target="_blank">↗ ${r.l}</a>`).join('')}</div>`:''}
+        </div>
+        <div class="t-acts">
+          <a class="act-btn" href="${t.url}" target="_blank">↗</a>
+          <button class="act-btn" onclick="toggleTip('${t.id}')" style="color:${p.color};border-color:${p.color}44">💡</button>
+          ${t.resources?`<button class="act-btn" onclick="toggleRes('${t.id}')">📎</button>`:''}
+        </div>
+      </div>`).join('');
+    return `
+      <div class="ph-card${p.id===0?' qs':''}" id="phc${p.id}">
+        <div class="ph-hdr" id="phh${p.id}" onclick="togglePhase(${p.id})">
+          <div class="ph-icon" style="background:${p.color}">${p.icon}</div>
+          <div class="ph-meta">
+            <div class="ph-title-row">
+              <span class="ph-title">${p.title}</span>
+              ${p.tag?`<span class="ph-tag" style="background:${p.color};color:#fff">${p.tag}</span>`:''}
+              <span class="ph-tag done-tag${p.id}" style="background:${p.color};color:#fff;display:none">✓ DONE</span>
+            </div>
+            <div class="ph-weeks">${p.weeks} · <span id="phcnt${p.id}">0</span>/${p.tasks.length} tasks${p.id===0?` · <span id="bdgcnt">0</span>/${BADGE_IDS.length} badges`:''}</div>
+          </div>
+          <div class="ph-ring">
+            <svg class="ring" width="42" height="42" viewBox="0 0 42 42">
+              <circle class="ring-bg" cx="21" cy="21" r="17"/>
+              <circle class="ring-fill" id="ring${p.id}" cx="21" cy="21" r="17" stroke="${p.color}" stroke-dasharray="0 ${CIRC}"/>
+            </svg>
+            <span class="chev" id="chev${p.id}">▾</span>
+          </div>
+        </div>
+        <div class="ph-goal" id="phg${p.id}">🎯 ${p.goal}</div>
+        <div class="tasks-wrap" id="pht${p.id}">${tasks}</div>
+      </div>`;
+  }).join('');
+}
+
+function buildRoadmap(){
+  const el=document.getElementById('rm-content');
+  el.innerHTML=PHASES.map(p=>`
+    <div class="rm-phase">
+      <div class="rm-ph-hdr">
+        <div class="rm-ph-icon" style="background:${p.color}">${p.icon}</div>
+        <div>
+          <div style="font-size:14px;font-weight:700;color:${p.color}">${p.label} — ${p.title}</div>
+          <div style="font-size:11px;color:var(--muted)">${p.weeks} · ${p.goal}</div>
+        </div>
+      </div>
+      ${p.tasks.map(t=>`
+        <div class="rm-task" style="border-left-color:${p.color}">
+          <div class="rm-task-title">${t.title}${t.badge?`<span class="bdg-pill">🏅 Badge</span>`:''}${t.dur?`<span class="dur-pill">${t.dur}</span>`:''}</div>
+          <div class="rm-task-desc">${t.desc}</div>
+          <div class="rm-task-tip">💡 ${t.tip}</div>
+          <div class="rm-res">${(t.resources||[{l:'Open Resource',u:t.url}]).map(r=>`<a class="res-link" href="${r.u}" target="_blank">↗ ${r.l}</a>`).join('')}</div>
+        </div>`).join('')}
+    </div>`).join('');
+}
+
+// ══════════════════════════════════════════
+// INTERACTIONS
+// ══════════════════════════════════════════
+function applyProgress(){
+  PHASES.forEach(p=>{
+    let done=0;
+    p.tasks.forEach(t=>{ if(checked[t.id]){ done++; setTaskDone(t.id,p.color); }});
+    updatePhaseUI(p.id,done,p.tasks.length,p.color);
+  });
+  updateHeader();
+}
+
+function setTaskDone(id,color){
+  const ck=document.getElementById('ck'+id);
+  const tr=document.getElementById('tr'+id);
+  if(!ck)return;
+  ck.classList.add('chk');
+  ck.style.background=color;
+  if(tr)tr.classList.add('done');
+}
+function setTaskUndone(id){
+  const ck=document.getElementById('ck'+id);
+  const tr=document.getElementById('tr'+id);
+  if(!ck)return;
+  ck.classList.remove('chk');
+  ck.style.background='transparent';
+  if(tr)tr.classList.remove('done');
+}
+
+function toggleTask(id,color){
+  checked[id]=!checked[id];
+  if(checked[id]) setTaskDone(id,color); else setTaskUndone(id);
+  PHASES.forEach(p=>{
+    const done=p.tasks.filter(t=>checked[t.id]).length;
+    updatePhaseUI(p.id,done,p.tasks.length,p.color);
+  });
+  updateHeader();
+  saveState();
+  showToast(checked[id]?'✅ Task completed!':'↩ Task unchecked');
+}
+
+function updatePhaseUI(id,done,total,color){
+  const pct=Math.round(done/total*100);
+  const ring=document.getElementById('ring'+id);
+  if(ring)ring.setAttribute('stroke-dasharray',`${pct/100*CIRC} ${CIRC}`);
+  const cnt=document.getElementById('phcnt'+id);
+  if(cnt)cnt.textContent=done;
+  const pc=document.getElementById('pcnt'+id);
+  if(pc)pc.textContent=`${done}/${total}`;
+  const pb=document.getElementById('pbar'+id);
+  if(pb)pb.style.width=pct+'%';
+  const np=document.getElementById('npct'+id);
+  if(np)np.textContent=pct+'%';
+  const dt=document.querySelector('.done-tag'+id);
+  if(dt)dt.style.display=pct===100?'inline-block':'none';
+}
+
+function updateHeader(){
+  const done=Object.values(checked).filter(Boolean).length;
+  const badges=BADGE_IDS.filter(id=>checked[id]).length;
+  const pct=Math.round(done/TOTAL*100);
+  document.getElementById('h-done').textContent=done;
+  document.getElementById('h-total').textContent=TOTAL;
+  document.getElementById('h-bdg').textContent=badges;
+  document.getElementById('h-pct').textContent=pct+'%';
+  document.getElementById('h-pbar').style.width=pct+'%';
+  const bc=document.getElementById('bdgcnt');
+  if(bc)bc.textContent=badges;
+  const bb=document.getElementById('bdg-banner');
+  if(badges>0){
+    bb.classList.add('show');
+    document.getElementById('bdg-banner-text').textContent=`🏅 You've earned ${badges} Google badge${badges>1?'s':''}! Add them to LinkedIn now.`;
+  } else bb.classList.remove('show');
+  // Hide QS banner when done
+  const qsDone=PHASES[0].tasks.filter(t=>checked[t.id]).length;
+  const qsb=document.getElementById('qs-banner');
+  if(qsb)qsb.style.display=qsDone===PHASES[0].tasks.length?'none':'flex';
+}
+
+function togglePhase(id){
+  if(openPhases[id]) closePhase(id); else openPhase(id);
+}
+function openPhase(id){
+  openPhases[id]=true;
+  document.getElementById('phh'+id)?.classList.add('open');
+  const g=document.getElementById('phg'+id); if(g)g.style.display='block';
+  const t=document.getElementById('pht'+id); if(t)t.style.display='block';
+  const c=document.getElementById('chev'+id); if(c)c.classList.add('open');
+}
+function closePhase(id){
+  openPhases[id]=false;
+  document.getElementById('phh'+id)?.classList.remove('open');
+  const g=document.getElementById('phg'+id); if(g)g.style.display='none';
+  const t=document.getElementById('pht'+id); if(t)t.style.display='none';
+  const c=document.getElementById('chev'+id); if(c)c.classList.remove('open');
+}
+
+function toggleTip(id){document.getElementById('tip'+id)?.classList.toggle('show')}
+function toggleRes(id){document.getElementById('res'+id)?.classList.toggle('show')}
+
+function switchTab(name){
+  ['tracker','roadmap','companies'].forEach(t=>{
+    document.getElementById('tb-'+t).classList.toggle('active',t===name);
+    document.getElementById('tp-'+t).classList.toggle('active',t===name);
+  });
+}
+function jumpToPhase(id){
+  switchTab('tracker');
+  openPhase(id);
+  setTimeout(()=>{
+    document.getElementById('phc'+id)?.scrollIntoView({behavior:'smooth',block:'start'});
+  },80);
+}
+
+function confirmReset(){
+  if(confirm('Reset all progress? This cannot be undone.')) resetAll();
+}
+function resetAll(){
+  checked={};
+  PHASES.forEach(p=>{
+    p.tasks.forEach(t=>setTaskUndone(t.id));
+    updatePhaseUI(p.id,0,p.tasks.length,p.color);
+  });
+  updateHeader();
+  try{localStorage.removeItem('ai_rm_2026')}catch(e){}
+  document.getElementById('last-saved').textContent='Progress cleared';
+  showToast('🔄 Progress reset');
+}
+
+let toastTimer;
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'),2500);
+}
+
+// ══════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════
+document.addEventListener('DOMContentLoaded',()=>{
+  loadState();
+  buildUI();
+  applyProgress();
+  openPhase(0);
+});
+</script>
+</body>
+</html>
